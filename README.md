@@ -7,6 +7,6 @@
 - 4: Built-in Executor
 ## Loadstring
 ***OFFICIAL LOADSTRING***
-```loadstring(game:HttpGet("https://raw.githubusercontent.com/xernoascriptz/Xernoa/refs/heads/main/XernoaHub",true))()```
+`loadstring(game:HttpGet("https://raw.githubusercontent.com/xernoascriptz/Xernoa/refs/heads/main/XernoaHub",true))()`
 #### Credits
 Owner / Dev - @ x5_vam on discord
