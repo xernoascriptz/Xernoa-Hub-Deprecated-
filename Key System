@@ -1,0 +1,88 @@
+--// Xernoa Hub Key System
+
+local validKeys = {
+    ["OWL16"] = true,
+    ["XERNOAONTOP"] = true,
+    ["Easter2026"] = true
+}
+
+-- GUI
+local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
+ScreenGui.Name = "XernoaKeySystem"
+
+local Frame = Instance.new("Frame", ScreenGui)
+Frame.Size = UDim2.new(0, 300, 0, 180)
+Frame.Position = UDim2.new(0.5, -150, 0.5, -90)
+Frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+Frame.BorderSizePixel = 0
+Frame.Active = true
+Frame.Draggable = true
+
+local UICorner = Instance.new("UICorner", Frame)
+UICorner.CornerRadius = UDim.new(0, 10)
+
+-- Title
+local Title = Instance.new("TextLabel", Frame)
+Title.Size = UDim2.new(1, 0, 0, 40)
+Title.BackgroundTransparency = 1
+Title.Text = "Xernoa Key System"
+Title.TextColor3 = Color3.fromRGB(170, 0, 255)
+Title.Font = Enum.Font.GothamBold
+Title.TextSize = 18
+
+-- TextBox
+local Box = Instance.new("TextBox", Frame)
+Box.Size = UDim2.new(0.8, 0, 0, 35)
+Box.Position = UDim2.new(0.1, 0, 0.35, 0)
+Box.PlaceholderText = "Enter Key..."
+Box.Text = ""
+Box.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Box.TextColor3 = Color3.new(1,1,1)
+Box.Font = Enum.Font.Gotham
+Box.TextSize = 14
+
+local BoxCorner = Instance.new("UICorner", Box)
+BoxCorner.CornerRadius = UDim.new(0, 6)
+
+-- Status Label
+local Status = Instance.new("TextLabel", Frame)
+Status.Size = UDim2.new(1, 0, 0, 20)
+Status.Position = UDim2.new(0, 0, 0.6, 0)
+Status.BackgroundTransparency = 1
+Status.Text = ""
+Status.TextColor3 = Color3.fromRGB(255, 0, 0)
+Status.Font = Enum.Font.Gotham
+Status.TextSize = 14
+
+-- Button
+local Button = Instance.new("TextButton", Frame)
+Button.Size = UDim2.new(0.6, 0, 0, 35)
+Button.Position = UDim2.new(0.2, 0, 0.75, 0)
+Button.Text = "Enter"
+Button.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
+Button.TextColor3 = Color3.new(1,1,1)
+Button.Font = Enum.Font.GothamBold
+Button.TextSize = 14
+
+local BtnCorner = Instance.new("UICorner", Button)
+BtnCorner.CornerRadius = UDim.new(0, 6)
+
+-- Logic
+Button.MouseButton1Click:Connect(function()
+    local key = Box.Text
+    
+    if validKeys[key] then
+        Status.TextColor3 = Color3.fromRGB(0,255,0)
+        Status.Text = "Key Accepted!, Thx For Using Xernoa"
+
+        wait(0.5)
+        ScreenGui:Destroy()
+
+        -- LOAD YOUR SCRIPT
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/xernoascriptz/Xernoa-Hub/main/XernoaHub"))()
+
+    else
+        Status.TextColor3 = Color3.fromRGB(255,0,0)
+        Status.Text = "Invalid Key"
+    end
+end)
