@@ -1,4 +1,4 @@
-l-- Xernoa Hub Key System 
+-- Xernoa Hub Key System 
 
 local validKeys = {
     ["OWL16"] = true,
