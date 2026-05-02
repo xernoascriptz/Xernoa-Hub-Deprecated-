@@ -1,1 +1,11 @@
-Deprecated..... use Velocity Hub
+-- Deprecated..... use Velocity Hub
+
+print("xernoa is deprecated, use velocity hub gng")
+
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Xernoa is Down", -- Required
+	Text = "Xernoa has been deprecated.... USE VELOCITY HUB ON SCRIPTBLOX NOW AND JOIN THE DISCORD AND LINK HAS BEEN COPIED", -- Required
+	Icon = "rbxassetid://1234567890" -- Optional
+})
+
+setclipboard("https://discord.gg/ckGvbX6EHr")
